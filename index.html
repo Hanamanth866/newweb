@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | New Job Alert</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #eef2f3, #8e9eab);
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #2563eb;
+      color: white;
+      text-align: center;
+      padding: 25px 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 500;
+      transition: opacity 0.3s ease;
+    }
+
+    nav a:hover {
+      opacity: 0.8;
+    }
+
+    nav a.active {
+      text-decoration: underline;
+    }
+
+    main {
+      flex: 1;
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      color: #1e293b;
+      margin-bottom: 25px;
+    }
+
+    .intro {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.6);
+      padding: 25px;
+      border-radius: 12px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      backdrop-filter: blur(8px);
+    }
+
+    .intro p {
+      max-width: 600px;
+      margin: 10px auto;
+      font-size: 1.1rem;
+      color: #475569;
+    }
+
+    /* Upcoming Jobs */
+    .job-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+    }
+
+    .job-card {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(8px);
+    }
+
+    .job-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .job-card h3 {
+      margin-top: 0;
+      color: #1e3a8a;
+      font-size: 1.3rem;
+    }
+
+    .job-card p {
+      margin: 8px 0;
+      line-height: 1.4;
+    }
+
+    .view-all-btn {
+      display: block;
+      width: fit-content;
+      margin: 30px auto;
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .view-all-btn:hover {
+      background-color: #1e40af;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1e293b;
+      color: #e2e8f0;
+      font-size: 0.95rem;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🚀  ಕರ್ನಾಟಕ ಸುದ್ದಿ</h1>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="jobs.html">Jobs</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>ಹೊಸ ಉದ್ಯೋಗ ಎಚ್ಚರಿಕೆಗೆ ಸುಸ್ವಾಗತ.</h2>
+      <p>
+       ಇತ್ತೀಚಿನ ಮತ್ತು ಮುಂಬರುವ ಉದ್ಯೋಗಾವಕಾಶಗಳೊಂದಿಗೆ ಜನಸಂದಣಿಗಿಂತ ಮುಂದೆ ಇರಿ. ತಂತ್ರಜ್ಞಾನ, ಕ್ಲೌಡ್ ಮತ್ತು ಅಭಿವೃದ್ಧಿ ಪಾತ್ರಗಳಲ್ಲಿ ಹೊಸ ಅವಕಾಶಗಳನ್ನು ಕಂಡುಹಿಡಿಯಲು ನಾವು ನಿಮಗೆ ಸಹಾಯ ಮಾಡುತ್ತೇವೆ.
+      </p>
+    </section>
+
+    <h2>🌟 ಮುಂಬರುವ ಉದ್ಯೋಗಗಳು</h2>
+
+    <div class="job-list">
+      <div class="job-card">
+        <h3>AI Engineer Intern</h3>
+        <p><strong>Company:</strong> FutureMind Labs</p>
+        <p><strong>Location:</strong> Pune, India</p>
+        <p><strong>Expected Opening:</strong> November 2025</p>
+      </div>
+
+      <div class="job-card">
+        <h3>Site Reliability Engineer (SRE)</h3>
+        <p><strong>Company:</strong> CloudNova Systems</p>
+        <p><strong>Location:</strong> Bangalore, India</p>
+        <p><strong>Expected Opening:</strong> December 2025</p>
+      </div>
+
+      <div class="job-card">
+        <h3>UI/UX Designer</h3>
+        <p><strong>Company:</strong> PixelWave Studios</p>
+        <p><strong>Location:</strong> Remote (India)</p>
+        <p><strong>Expected Opening:</strong> January 2026</p>
+      </div>
+    </div>
+
+    <a href="jobs.html" class="view-all-btn">View All Current Jobs →</a>
+  </main>
+
+  <footer>
+    <p>© 2025 New Job Alert. All rights reserved.</p>
+  </footer>
+</body>
+</html>

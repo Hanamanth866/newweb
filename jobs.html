@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Openings | New Job Alert</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ====== General Styling ====== */
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      background: #f5f7fa;
+      color: #333;
+    }
+
+    header {
+      background: #4a90e2;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 500;
+    }
+
+    nav a.active {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    /* ====== Filters Section ====== */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .filter-bar input,
+    .filter-bar select {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 250px;
+      max-width: 90%;
+    }
+
+    /* ====== Job List ====== */
+    .job-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .job-card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .job-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    .job-card h3 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    .job-card p {
+      margin: 5px 0;
+    }
+
+    .apply-button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .apply-button:hover {
+      background-color: #218838;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: #fff;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.6rem;
+      }
+      .filter-bar {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🚀 ಕರ್ನಾಟಕ ಸುದ್ದಿ</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="jobs.html" class="active">Jobs</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Latest Job Openings</h2>
+
+    <!-- 🔍 Filters -->
+    <div class="filter-bar">
+      <input type="text" id="searchBar" placeholder="Search by title or company..." />
+      <select id="locationFilter">
+        <option value="">All Locations</option>
+        <option value="Bangalore">Bangalore</option>
+        <option value="Hyderabad">Hyderabad</option>
+        <option value="Chennai">Chennai</option>
+      </select>
+    </div>
+
+    <!-- 💼 Job List -->
+    <div class="job-list" id="jobList">
+      <div class="job-card" data-title="DevOps Engineer" data-company="CloudTech Solutions" data-location="Bangalore">
+        <h3>DevOps Engineer</h3>
+        <p><strong>Company:</strong> CloudTech Solutions</p>
+        <p><strong>Location:</strong> Bangalore, India</p>
+        <p><strong>Experience:</strong> 0–2 years</p>
+        <button onclick="window.open('https://www.google.com', '_blank')" class="apply-button">Apply Now</button>
+      </div>
+
+      <div class="job-card" data-title="Frontend Developer" data-company="Innovate Labs" data-location="Hyderabad">
+        <h3>Frontend Developer</h3>
+        <p><strong>Company:</strong> Innovate Labs</p>
+        <p><strong>Location:</strong> Hyderabad, India</p>
+        <p><strong>Experience:</strong> 1–3 years</p>
+        <button onclick="window.open('https://www.linkedin.com', '_blank')" class="apply-button">Apply Now</button>
+      </div>
+
+      <div class="job-card" data-title="Cloud Support Associate" data-company="AWS India" data-location="Chennai">
+        <h3>Cloud Support Associate</h3>
+        <p><strong>Company:</strong> AWS India</p>
+        <p><strong>Location:</strong> Chennai, India</p>
+        <p><strong>Experience:</strong> Fresher</p>
+        <button onclick="window.open('https://aws.amazon.com/careers', '_blank')" class="apply-button">Apply Now</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 New Job Alert. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const searchBar = document.getElementById("searchBar");
+    const locationFilter = document.getElementById("locationFilter");
+    const jobCards = document.querySelectorAll(".job-card");
+
+    function filterJobs() {
+      const searchText = searchBar.value.toLowerCase();
+      const selectedLocation = locationFilter.value;
+
+      jobCards.forEach(card => {
+        const title = card.getAttribute("data-title").toLowerCase();
+        const company = card.getAttribute("data-company").toLowerCase();
+        const location = card.getAttribute("data-location");
+
+        const matchesSearch = title.includes(searchText) || company.includes(searchText);
+        const matchesLocation = !selectedLocation || location === selectedLocation;
+
+        if (matchesSearch && matchesLocation) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+
+    searchBar.addEventListener("input", filterJobs);
+    locationFilter.addEventListener("change", filterJobs);
+  </script>
+
+  <button onclick="logout()" style="float:right; margin-right:20px; padding:6px 12px; border:none; border-radius:6px; background:#ef4444; color:white; cursor:pointer;">Logout</button>
+
+<script>
+  function logout() {
+    localStorage.removeItem("loggedIn");
+    window.location.href = "login.html";
+  }
+</script>
+
+</body>
+</html>

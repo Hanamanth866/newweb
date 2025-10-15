@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | New Job Alert</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #eef2f3, #8e9eab);
+      margin: 0;
+    }
+
+    .login-container {
+      background: rgba(255,255,255,0.9);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 320px;
+    }
+
+    .login-container h2 {
+      margin-bottom: 20px;
+      color: #1e3a8a;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .login-container button:hover {
+      background-color: #1e40af;
+    }
+
+    .error {
+      color: red;
+      margin-bottom: 10px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Login</h2>
+    <div class="error" id="errorMsg">Invalid email or password!</div>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button onclick="login()">Login</button>
+  </div>
+
+  <script>
+    function login() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      // Simple dummy login check
+      if(email === "user@example.com" && password === "password123") {
+        // Save login state in localStorage
+        localStorage.setItem("loggedIn", "true");
+        window.location.href = "jobs.html"; // redirect to jobs page
+      } else {
+        const errorMsg = document.getElementById("errorMsg");
+        errorMsg.style.display = "block";
+      }
+    }
+
+    // Optional: redirect to jobs.html if already logged in
+    if(localStorage.getItem("loggedIn") === "true") {
+      window.location.href = "jobs.html";
+    }
+  </script>
+</body>
+</html>
